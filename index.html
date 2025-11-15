@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UHV-2 Unit-04 - Questions</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f9f9f9;
+            color: #333;
+            font-size: 1rem;
+            line-height: 1.55;
+        }
+
+        header {
+            background-color: #0077cc;
+            color: white;
+            padding: 0.9rem 0.5rem;
+            text-align: center;
+            font-size: 1.4rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 1.8rem auto;
+            padding: 1.1rem;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.06);
+            page-break-after: always;
+            border-radius: 6px;
+        }
+
+        h2 {
+            color: #0077cc;
+            margin: 0 0 0.9rem;
+            font-size: 1.55rem;
+            font-weight: 600;
+        }
+
+        h3 {
+            color: #444;
+            margin: 1.1rem 0 0.55rem;
+            font-size: 1.28rem;
+            font-weight: 600;
+        }
+
+        p {
+            margin: 0.55rem 0;
+        }
+
+        ul, ol {
+            margin: 0.55rem 0;
+            padding-left: 1.3rem;
+        }
+
+        li {
+            margin-bottom: 0.35rem;
+        }
+
+        li > ul, li > ol {
+            margin: 0.35rem 0;
+            padding-left: 1.2rem;
+        }
+
+        pre {
+            background: #f4f4f4;
+            padding: 11px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 0.88rem;
+            line-height: 1.4;
+            margin: 0.7rem 0;
+            border: 1px solid #eee;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                font-size: 1.25rem;
+                padding: 0.75rem 0.5rem;
+            }
+
+            .container {
+                margin: 1.2rem auto;
+                padding: 0.95rem;
+                border-radius: 5px;
+            }
+
+            h2 {
+                font-size: 1.35rem;
+                margin-bottom: 0.8rem;
+            }
+
+            h3 {
+                font-size: 1.15rem;
+                margin: 0.95rem 0 0.45rem;
+            }
+
+            ul, ol {
+                padding-left: 1rem;
+            }
+
+            li > ul, li > ol {
+                padding-left: 1rem;
+            }
+
+            pre {
+                font-size: 0.82rem;
+                padding: 9px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                margin: 1rem auto;
+                padding: 0.85rem;
+            }
+
+            h2 {
+                font-size: 1.25rem;
+            }
+
+            h3 {
+                font-size: 1.1rem;
+            }
+
+            ul, ol {
+                padding-left: 0.9rem;
+            }
+
+            li > ul, li > ol {
+                padding-left: 0.9rem;
+            }
+        }
+
+        @media print {
+            .container {
+                page-break-after: always;
+                box-shadow: none;
+                margin: 0;
+                padding: 1rem;
+                border-radius: 0;
+            }
+
+            header {
+                background: #0077cc !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+        }
+
+        ol.roman {
+            counter-reset: item;
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0.55rem 0;
+        }
+
+        ol.roman > li {
+            counter-increment: item;
+            position: relative;
+            padding-left: 1.6rem;
+            margin-bottom: 0.35rem;
+        }
+
+        ol.roman > li::before {
+            content: counter(item, lower-roman) ") ";
+            position: absolute;
+            left: 0;
+            color: #0077cc;
+            font-weight: bold;
+            width: 1.4rem;
+            text-align: left;
+            font-size: 0.94em;
+            top: 0;
+        }
+
+        ol.roman ol {
+            counter-reset: subitem;
+            list-style-type: none;
+            padding-left: 0;
+            margin-top: 0.3rem;
+        }
+
+        ol.roman ol > li {
+            counter-increment: subitem;
+            position: relative;
+            padding-left: 1.7rem;
+            margin-bottom: 0.25rem;
+        }
+
+        ol.roman ol > li::before {
+            content: "(" counter(subitem, lower-alpha) ") ";
+            position: absolute;
+            left: 0;
+            color: #0077cc;
+            font-weight: bold;
+            width: 1.5rem;
+            font-size: 0.92em;
+        }
+
+        ol.roman li > ul {
+            margin: 0.35rem 0 0.5rem 1.4rem;
+            padding-left: 0;
+        }
+
+        @media (max-width: 768px) {
+            ol.roman > li {
+                padding-left: 1.5rem;
+            }
+
+            ol.roman > li::before {
+                width: 1.3rem;
+            }
+
+            ol.roman ol > li {
+                padding-left: 1.6rem;
+            }
+
+            ol.roman ol > li::before {
+                width: 1.4rem;
+            }
+
+            ol.roman li > ul {
+                margin-left: 1rem;
+            }
+        }
+
+        .indent-block {
+            margin-left: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .indent-block {
+                margin-left: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .indent-block {
+                margin-left: 0.8rem;
+            }
+        }
+
+        img {
+            display: block;
+            max-width: 58%;
+            height: auto;
+            max-height: 270px;
+            object-fit: contain;
+            margin: 1rem auto;
+            border-radius: 6px;
+            cursor: zoom-in;
+            transition: transform 0.2s ease;
+            border: 1px solid #ddd;
+        }
+
+        img:hover {
+            transform: scale(1.04);
+        }
+
+        #lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.85);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease;
+            z-index: 1000;
+            backdrop-filter: blur(6px);
+        }
+
+        #lightbox.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        #lightbox img {
+            max-width: 88%;
+            max-height: 88%;
+            border-radius: 10px;
+            box-shadow: 0 0 25px rgba(255,255,255,0.3);
+            transform: scale(0.85);
+            transition: transform 0.3s ease;
+            cursor: zoom-out;
+        }
+
+        #lightbox.active img {
+            transform: scale(1);
+        }
+
+        #image-tip {
+            position: fixed;
+            top: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 119, 204, 0.96);
+            color: #fff;
+            padding: 0.7rem 1.1rem;
+            border-radius: 6px;
+            font-size: 0.92rem;
+            font-weight: 500;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease;
+            white-space: nowrap;
+        }
+
+        #image-tip.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @media (max-width: 480px) {
+            #image-tip {
+                font-size: 0.85rem;
+                padding: 0.6rem 1rem;
+            }
+        }
+    </style>
+     <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WJ8GK8VNS9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-WJ8GK8VNS9');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8311353174841359"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <header>
+        UHV-2 Unit-04
+    </header>
+
+    <div class="container">
+        <h2>1. Harmony in Nature / Nature & its equanimity</h2>
+        <h3>Define the Nature and its equanimity.</h3>
+        <ul>
+            <li>Nature Meaning: All physical entities around us.</li>
+            <li>Equanimity State: Balanced and calm condition.</li>
+            <li>Harmony Balance: Interconnected systems in peace.</li>
+            <li>Self-Sustain: Maintains through cycles.</li>
+            <li>Human Learn: Observe for better living.</li>
+        </ul>
+        <h3>Discuss the concept of Nature and Existence.</h3>
+        <ul>
+            <li>Nature Concept: Material world with orders.</li>
+            <li>Existence Idea: Co-existence of units.</li>
+            <li>Space Role: Pervasive empty area.</li>
+            <li>Mutual Interact: Units fulfill each other.</li>
+            <li>Harmony View: Overall balanced whole.</li>
+        </ul>
+        <h3>Elucidate the harmony in nature and its equanimity.</h3>
+        <ul>
+            <li>Harmony Explanation: Balanced interconnectedness.</li>
+            <li>Equanimity Feature: Stable peaceful state.</li>
+            <li>Orders Link: Four levels support mutually.</li>
+            <li>Cycle Maintain: Recyclability ensures continuity.</li>
+            <li>Human Duty: Preserve natural balance.</li>
+        </ul>
+    </div>
+
+    <header>
+        UHV-2 Unit-04
+    </header>
+
+    <div class="container">
+        <h2>2. Four orders of nature / Interconnectedness among orders</h2>
+        <h3>Explain the Interconnectedness and mutual fulfilment among the four orders of nature.</h3>
+        <ul>
+            <li>Four Orders: Material, plant, animal, human.</li>
+            <li>Interconnected Link: Each depends on others.</li>
+            <li>Mutual Fulfill: Benefits flow both ways.</li>
+            <li>Balance Keep: Natural harmony exists.</li>
+            <li>Human Role: Understand and maintain.</li>
+        </ul>
+        <h3>Explain the four orders of nature.</h3>
+        <ul>
+            <li>Material Order: Soil and water.</li>
+            <li>Plant Order: Trees and grass.</li>
+            <li>Animal Order: Birds and beasts.</li>
+            <li>Human Order: People with will.</li>
+            <li>Connected Whole: All interact mutually.</li>
+        </ul>
+        <h3>Write whole existence as coexistence.</h3>
+        <ul>
+            <li>Coexistence Meaning: Units together in space.</li>
+            <li>Space Everywhere: Unlimited empty area.</li>
+            <li>Units Interact: Limited entities connect.</li>
+            <li>Mutual Help: Fulfill each other.</li>
+            <li>Harmony Total: Balanced overall view.</li>
+        </ul>
+    </div>
+
+    <header>
+        UHV-2 Unit-04
+    </header>
+
+    <div class="container">
+        <h2>3. Recyclability, Self-regulation & Mutual fulfilment</h2>
+        <h3>What is Recyclability? Discuss the importance.</h3>
+        <ul>
+            <li>Recyclability Meaning: Reuse of materials.</li>
+            <li>Importance Sustain: Keeps resources available.</li>
+            <li>Nature Example: Water cycle renews.</li>
+            <li>Balance Maintain: Prevents depletion.</li>
+            <li>Human Apply: Reduce waste harm.</li>
+        </ul>
+        <h3>Explain the recyclability and self-regulation in nature.</h3>
+        <ul>
+            <li>Recyclability Process: Materials reuse cyclically.</li>
+            <li>Self-Regulation: Balance adjusts automatically.</li>
+            <li>Nature Cycles: Nutrients flow continuously.</li>
+            <li>Mutual Support: Orders fulfill needs.</li>
+            <li>Harmony Keep: Stable environment.</li>
+        </ul>
+        <h3>Discuss the self regulation in nature.</h3>
+        <ul>
+            <li>Self-Regulation Meaning: Automatic balance control.</li>
+            <li>Nature Adjust: Responds to changes.</li>
+            <li>Cycle Maintain: Seasons and weather.</li>
+            <li>Orders Interact: Support each other.</li>
+            <li>Stability Ensure: Long-term harmony.</li>
+        </ul>
+    </div>
+
+    <header>
+        UHV-2 Unit-04
+    </header>
+
+    <div class="container">
+        <h2>4. Existence as co-existence / Pervasive space (units interacting in space)</h2>
+        <h3>Write about the pervasive space.</h3>
+        <ul>
+            <li>Space Meaning: Unlimited empty area.</li>
+            <li>Pervasive Nature: Everywhere without limit.</li>
+            <li>Units Place: Holds all entities.</li>
+            <li>Interact Enable: Allows mutual connection.</li>
+            <li>Co-existence Base: Foundation for harmony.</li>
+        </ul>
+    </div>
+
+    <header>
+        UHV-2 Unit-04
+    </header>
+
+    <div class="container">
+        <h2>5. Holistic perception of harmony at all levels</h2>
+        <h3>Discuss the Holistic perception of harmony.</h3>
+        <ul>
+            <li>Holistic View: See whole as connected.</li>
+            <li>All Levels: From self to existence.</li>
+            <li>Harmony Understand: Balance in everything.</li>
+            <li>Human Role: Act responsibly.</li>
+            <li>Peace Achieve: Leads to fulfillment.</li>
+        </ul>
+        <h3>Discuss the perception of harmony at all levels of existence.</h3>
+        <ul>
+            <li>Existence Levels: Self, family, society, nature.</li>
+            <li>Perception Holistic: View as one unit.</li>
+            <li>Balance See: Interconnected harmony.</li>
+            <li>Apply Daily: In actions and thoughts.</li>
+            <li>Fulfillment Get: Continuous happiness.</li>
+        </ul>
+        <h3>Discuss the different levels of Holistic perception of harmony.</h3>
+        <ul>
+            <li>Self Level: Inner peace balance.</li>
+            <li>Family Level: Mutual respect harmony.</li>
+            <li>Society Level: Co-existence order.</li>
+            <li>Nature Level: Recyclable systems.</li>
+            <li>Existence Level: Overall co-existence.</li>
+        </ul>
+        <h3>Explain the holistic perception of harmony.</h3>
+        <ul>
+            <li>Holistic Meaning: Complete connected view.</li>
+            <li>Harmony Perception: Balance at levels.</li>
+            <li>Understand Whole: See interdependence.</li>
+            <li>Apply Life: Guide actions ethically.</li>
+            <li>Benefits All: Peace and prosperity.</li>
+        </ul>
+    </div>
+
+    <header>
+        UHV-2 Unit-04
+    </header>
+
+    <div class="container">
+        <h2>6. Human role in imbalance, depletion, pollution & related practice sessions</h2>
+        <h3>Write about the depletion of resources.</h3>
+        <ul>
+            <li>Depletion Meaning: Using up resources fast.</li>
+            <li>Human Cause: Overuse and waste.</li>
+            <li>Impact Nature: Disrupts balance cycles.</li>
+            <li>Practice Discuss: Identify personal role.</li>
+            <li>Solution Adopt: Sustainable living ways.</li>
+        </ul>
+        <h3>Describe the causes of human imbalance with examples.</h3>
+        <ul>
+            <li>Imbalance Causes: Wrong understanding actions.</li>
+            <li>Example Pollution: Factories emit waste.</li>
+            <li>Depletion Resources: Overfishing seas.</li>
+            <li>Technology Role: Increases harm sometimes.</li>
+            <li>Practice Reflect: Discuss life examples.</li>
+        </ul>
+        <h3>Discuss human being as cause of imbalance in nature — pollution, depletion of resources and role of technology (use film “Home” etc.).</h3>
+        <ul>
+            <li>Human Cause: Actions disrupt harmony.</li>
+            <li>Pollution Example: Emissions harm air.</li>
+            <li>Depletion Issue: Resources used excessively.</li>
+            <li>Technology Role: Can harm or help.</li>
+            <li>Practice Session: Watch film discuss.</li>
+        </ul>
+    </div>
+
+    <div id="lightbox">
+        <img id="lightbox-img" src="" alt="Enlarged view">
+    </div>
+
+    <script>
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+
+        document.querySelectorAll("img").forEach(img => {
+            img.addEventListener("click", () => {
+                lightboxImg.src = img.src;
+                lightbox.classList.add("active");
+            });
+        });
+
+        lightbox.addEventListener("click", () => {
+            lightbox.classList.remove("active");
+        });
+
+        window.addEventListener("DOMContentLoaded", () => {
+            const tip = document.getElementById("image-tip");
+            tip.classList.add("show");
+            setTimeout(() => tip.classList.remove("show"), 5000);
+        });
+    </script>
+
+</body>
+
+</html>
